@@ -1,17 +1,19 @@
-import React from "react";
-import Article from "./Article";
+import React from 'react';
+import Article from './Article'; // Adjust the path as necessary
 
-function ArticleList({ posts }) {
-  const articles = posts.map((post) => (
-    <Article
-      key={post.id}
-      title={post.title}
-      date={post.date}
-      preview={post.preview}
-      minutes={post.minutes}
-    />
-  ));
-  return <main>{articles}</main>;
-}
+const ArticleList = ({ posts }) => {
+  return (
+    <main>
+      {posts.map(post => (
+        <Article
+          key={post.id} // Unique key for each Article
+          title={post.title}
+          date={post.date}
+          preview={post.preview}
+        />
+      ))}
+    </main>
+  );
+};
 
 export default ArticleList;
